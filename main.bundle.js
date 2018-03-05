@@ -82,6 +82,7 @@ var AppComponent = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export provideConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -146,8 +147,15 @@ var config = new __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["AuthServic
     {
         id: __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["FacebookLoginProvider"].PROVIDER_ID,
         provider: new __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["FacebookLoginProvider"]('1604161956329292')
+    },
+    {
+        id: __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["GoogleLoginProvider"].PROVIDER_ID,
+        provider: new __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["GoogleLoginProvider"]('331487605606-uelg4mi5n56qajtsk10i9hg6nf13cbln.apps.googleusercontent.com')
     }
 ]);
+function provideConfig() {
+    return config;
+}
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -166,7 +174,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_21__main_layout_main_home_curso_curso_component__["a" /* CursoComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["SocialLoginModule"].initialize(config),
+                __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["SocialLoginModule"],
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
@@ -182,6 +190,10 @@ var AppModule = /** @class */ (function () {
                     provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["LOCALE_ID"],
                     deps: [__WEBPACK_IMPORTED_MODULE_12__service_settings_settings_service__["a" /* SettingsService */]],
                     useFactory: function (settingService) { return settingService.getLocale(); }
+                },
+                {
+                    provide: __WEBPACK_IMPORTED_MODULE_8_angular4_social_login__["AuthServiceConfig"],
+                    useFactory: provideConfig
                 }
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
@@ -273,7 +285,7 @@ var LoginLayoutComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/login-layout/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row justify-content-center\">\r\n\r\n  <div class=\"col-10 col-sm-8 col-md-6 col-lg-4 mt-3\">\r\n    <form class=\"form-signin\">\r\n      <h2 class=\"form-signin-heading\">Login</h2>\r\n      <button class=\"btn btn-lg btn-outline-primary btn-block\" (click)=\"fazerLogin()\">LOGIN COM FACEBOOK</button>\r\n    </form>\r\n  </div>\r\n\r\n</div>"
+module.exports = "<div class=\"row justify-content-center\">\r\n\r\n  <div class=\"col-10 col-sm-8 col-md-6 col-lg-4 mt-3\">\r\n    <form class=\"form-signin\">\r\n      <div class=\"col-12\">\r\n        <h2 class=\"form-signin-heading\">Bem vindo ao Angularing</h2><br/>\r\n        <button class=\"btn btn-lg btn-outline-primary btn-block\" (click)=\"fazerLoginFacebook()\">LOGIN COM FACEBOOK</button>\r\n        <button class=\"btn btn-lg btn-outline-danger btn-block\" (click)=\"fazerLoginGoogle()\">LOGIN COM GOOGLE</button>\r\n      </div>\r\n      <div class=\"col-12 text-right mt-2\">\r\n        <span class=\"text-secondary\"><i>by Augusto Mesquita</i></span>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -324,8 +336,11 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.ngOnInit = function () {
         this.authStateSubscription = this.accountValidator(this.authService);
     };
-    LoginComponent.prototype.fazerLogin = function () {
+    LoginComponent.prototype.fazerLoginFacebook = function () {
         this.authService.signIn(__WEBPACK_IMPORTED_MODULE_1_angular4_social_login__["FacebookLoginProvider"].PROVIDER_ID);
+    };
+    LoginComponent.prototype.fazerLoginGoogle = function () {
+        this.authService.signIn(__WEBPACK_IMPORTED_MODULE_1_angular4_social_login__["GoogleLoginProvider"].PROVIDER_ID);
     };
     LoginComponent.prototype.accountValidator = function (authService) {
         var _this = this;
@@ -337,7 +352,6 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.ngOnDestroy = function () {
         this.authStateSubscription.unsubscribe();
-        console.log('Para de escutar subscribe de usuário.');
     };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
