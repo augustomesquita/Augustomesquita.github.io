@@ -35,7 +35,11 @@
    * Aqui é a função chamada antes de entrar no game loop (função update)
    */
   function create() {
-    audioBackground = new Phaser.Sound(game, "audioBackground", 1, true);
+    var audioBackground = new Phaser.Sound(game, "audioBackground", 1, true);
+    setTimeout(function() {
+      audioBackground.play();
+    }, 100);
+
     audioCoin = game.add.audio("audioCoin");
 
     keys = game.input.keyboard.createCursorKeys();
@@ -94,7 +98,6 @@
    * Game loop.
    */
   function update() {
-	audioBackground.play();
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.collide(stars, platforms);
     game.physics.arcade.overlap(player, stars, collectStar);
