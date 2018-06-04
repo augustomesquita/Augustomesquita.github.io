@@ -10,7 +10,7 @@
     keys,
     stars,
     audioCoin,
-    audioBackground,
+    audioJump,
     txtScore,
     score = 0;
 
@@ -22,8 +22,9 @@
    * resgastar estes recursos posteriormente na função create.
    */
   function preload() {
-    game.load.audio("audioBackground", "audio/background.mp3");
-    game.load.audio("audioCoin", "audio/coin.wav");
+    game.load.audio("audioBackground", "audio/background.wav");
+	game.load.audio("audioCoin", "audio/coin.wav");
+	game.load.audio("audioJump", "audio/jump.wav");
     game.load.image("sky", "img/sky.png");
     game.load.image("diamond", "img/diamond.png");
     game.load.image("platform", "img/platform.png");
@@ -40,7 +41,8 @@
       audioBackground.play();
     }, 100);
 
-    audioCoin = game.add.audio("audioCoin");
+	audioCoin = game.add.audio("audioCoin");
+	audioJump = game.add.audio("audioJump");
 
     keys = game.input.keyboard.createCursorKeys();
 
@@ -115,7 +117,8 @@
     }
 
     if ((keys.up.isDown || keyW.isDown) && player.body.touching.down) {
-      player.body.velocity.y = -580;
+	  player.body.velocity.y = -580;
+	  audioJump.play();
     }
   }
 
