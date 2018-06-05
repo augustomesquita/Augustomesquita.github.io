@@ -8,7 +8,7 @@
   var platforms,
     player,
     keys,
-    stars,
+    coins,
     audioCoin,
     audioJump,
     txtScore,
@@ -23,13 +23,13 @@
    */
   function preload() {
     game.load.audio("audioBackground", "audio/background.wav");
-	game.load.audio("audioCoin", "audio/coin.wav");
-	game.load.audio("audioJump", "audio/jump.wav");
+    game.load.audio("audioCoin", "audio/coin.wav");
+    game.load.audio("audioJump", "audio/jump.wav");
     game.load.image("sky", "img/sky.png");
     game.load.image("diamond", "img/diamond.png");
     game.load.image("platform", "img/platform.png");
-    game.load.image("star", "img/star.png");
     game.load.spritesheet("dude", "img/dude.png", 32, 48);
+    game.load.spritesheet("coin", "img/coin_sheet.png", 24, 24);
   }
 
   /**
@@ -41,8 +41,8 @@
       audioBackground.play();
     }, 100);
 
-	audioCoin = game.add.audio("audioCoin");
-	audioJump = game.add.audio("audioJump");
+    audioCoin = game.add.audio("audioCoin");
+    audioJump = game.add.audio("audioJump");
 
     keys = game.input.keyboard.createCursorKeys();
 
@@ -68,13 +68,15 @@
     platform = platforms.create(-150, 250, "platform");
     platform.body.immovable = true;
 
-    stars = game.add.group();
-    stars.enableBody = true;
+    coins = game.add.group();
+    coins.enableBody = true;  
 
     for (var i = 0; i < 12; i++) {
-      var star = stars.create(i * 70, 0, "star");
-      star.body.gravity.y = 300;
-      star.body.bounce.y = 0.7 + Math.random() * 0.2;
+      var coin = coins.create(i * 70, 0, "coin");
+      coin.body.gravity.y = 300;
+      coin.body.bounce.y = 0.7 + Math.random() * 0.2;
+      coin.animations.add("coinAnimation", [0, 1, 2, 3], 10, true);
+      coin.animations.play("coinAnimation");
     }
 
     player = game.add.sprite(50, game.world.height - 150, "dude");
@@ -101,8 +103,8 @@
    */
   function update() {
     game.physics.arcade.collide(player, platforms);
-    game.physics.arcade.collide(stars, platforms);
-    game.physics.arcade.overlap(player, stars, collectStar);
+    game.physics.arcade.collide(coins, platforms);
+    game.physics.arcade.overlap(player, coins, collectCoin);
 
     player.body.velocity.x = 0;
     if (keys.left.isDown || keyA.isDown) {
@@ -117,15 +119,15 @@
     }
 
     if ((keys.up.isDown || keyW.isDown) && player.body.touching.down) {
-	  player.body.velocity.y = -580;
-	  audioJump.play();
+      player.body.velocity.y = -580;
+      audioJump.play();
     }
   }
 
-  function collectStar(player, star) {
+  function collectCoin(player, coin) {
     audioCoin.play();
 
-    star.kill();
+    coin.kill();
     score += 10;
     txtScore.text = "SCORE: " + score;
   }
