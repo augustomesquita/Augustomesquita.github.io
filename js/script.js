@@ -1,9 +1,20 @@
 (function() {
-  var game = new Phaser.Game(800, 600, Phaser.AUTO, null, {
-    preload: preload,
-    create: create,
-    update: update
-  });
+  var conf = {
+    width: 800,
+    height: 600,
+    renderer: Phaser.AUTO,
+    parent: null,
+    transparent: true,
+    antialias: false,
+    state: {
+      preload: preload,
+      create: create,
+      update: update
+    },
+    scaleMode: Phaser.ScaleManager.EXACT_FIT
+  };
+
+  var game = new Phaser.Game(conf);
 
   var platforms,
     player,
@@ -69,7 +80,7 @@
     platform.body.immovable = true;
 
     coins = game.add.group();
-    coins.enableBody = true;  
+    coins.enableBody = true;
 
     for (var i = 0; i < 12; i++) {
       var coin = coins.create(i * 70, 0, "coin");
