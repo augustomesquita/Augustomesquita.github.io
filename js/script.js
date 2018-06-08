@@ -33,14 +33,13 @@
    * resgastar estes recursos posteriormente na função create.
    */
   function preload() {
-    game.load.audio("audioBackground", "audio/background.wav");
-    game.load.audio("audioCoin", "audio/coin.wav");
-    game.load.audio("audioJump", "audio/jump.wav");
-    game.load.image("sky", "img/sky.png");
-    game.load.image("diamond", "img/diamond.png");
-    game.load.image("platform", "img/platform.png");
-    game.load.spritesheet("dude", "img/dude.png", 32, 48);
-    game.load.spritesheet("coin", "img/coin_sheet.png", 24, 24);
+    this.load.audio("audioBackground", "audio/background.wav");
+    this.load.audio("audioCoin", "audio/coin.wav");
+    this.load.audio("audioJump", "audio/jump.wav");
+    this.load.image("imageSky", "img/sky.png");
+    this.load.image("imagePlatform", "img/platform.png");
+    this.load.spritesheet("spriteDude", "img/dude.png", 32, 48);
+    this.load.spritesheet("spriteCoin", "img/coin_sheet.png", 24, 24);
   }
 
   /**
@@ -62,35 +61,35 @@
     keyD = game.input.keyboard.addKey(Phaser.Keyboard.D);
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.add.sprite(0, 0, "sky");
+    game.add.sprite(0, 0, "imageSky");
 
     platforms = game.add.group();
     platforms.enableBody = true;
 
-    var platform = platforms.create(0, game.world.height - 32, "platform");
+    var platform = platforms.create(0, game.world.height - 32, "imagePlatform");
     platform.body.immovable = true;
 
-    var platform = platforms.create(400, game.world.height - 32, "platform");
+    var platform = platforms.create(400, game.world.height - 32, "imagePlatform");
     platform.body.immovable = true;
 
-    platform = platforms.create(400, 400, "platform");
+    platform = platforms.create(400, 400, "imagePlatform");
     platform.body.immovable = true;
 
-    platform = platforms.create(-150, 250, "platform");
+    platform = platforms.create(-150, 250, "imagePlatform");
     platform.body.immovable = true;
 
     coins = game.add.group();
     coins.enableBody = true;
 
     for (var i = 0; i < 12; i++) {
-      var coin = coins.create(i * 70, 0, "coin");
+      var coin = coins.create(i * 70, 0, "spriteCoin");
       coin.body.gravity.y = 300;
       coin.body.bounce.y = 0.7 + Math.random() * 0.2;
-      coin.animations.add("coinAnimation", [0, 1, 2, 3], 10, true);
-      coin.animations.play("coinAnimation");
+      coin.animations.add("animationCoin", [0, 1, 2, 3], 10, true);
+      coin.animations.play("animationCoin");
     }
 
-    player = game.add.sprite(50, game.world.height - 150, "dude");
+    player = game.add.sprite(50, game.world.height - 150, "spriteDude");
     game.physics.arcade.enable(player);
     player.body.gravity.y = 1000;
     player.body.bounce.y = 0.2;
