@@ -17,10 +17,7 @@ function preload() {
  * Aqui é a função chamada antes de entrar no game loop (função update)
  */
 function create() {
-  // Define o sistema de física.
   game.physics.startSystem(Phaser.Physics.ARCADE);
-
-  // Outras configurações
   configSound("audioBackground");
   configKeys();
   configSprites();
@@ -31,7 +28,7 @@ function create() {
  * Game loop.
  */
 function update() {
-  configCollision();
+  enableCollision();
   enablePlayerMovement();
 }
 
