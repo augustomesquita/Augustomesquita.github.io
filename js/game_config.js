@@ -45,7 +45,7 @@ function configPlayerHUD() {
 /**
  * Configura colisões.
  */
-function configCollision() {
+function enableCollision() {
   game.physics.arcade.collide(player, platforms);
   game.physics.arcade.collide(coins, platforms);
   game.physics.arcade.overlap(player, coins, collectCoin);
