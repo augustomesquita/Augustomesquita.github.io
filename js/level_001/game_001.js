@@ -9,7 +9,7 @@ function preload() {
   this.load.audio("audioJump", "audio/jump.wav");
   this.load.image("imageBackgroundSky", "img/sky.png");
   this.load.image("imagePlatform", "img/platform.png");
-  this.load.spritesheet("spriteDude", "img/dude.png", 32, 48);
+  this.load.spritesheet("spriteDude", "img/dude.png", 40, 50);
   this.load.spritesheet("spriteCoin", "img/coin_sheet.png", 24, 24);
 }
 

@@ -16,9 +16,8 @@ function configSound(backgroundSoundKey) {
  */
 function configKeys() {
   keys = game.input.keyboard.createCursorKeys();
-  keyW = game.input.keyboard.addKey(Phaser.Keyboard.W);
   keyA = game.input.keyboard.addKey(Phaser.Keyboard.A);
-  keyD = game.input.keyboard.addKey(Phaser.Keyboard.D);
+  keySpaceBar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 }
 
 /**
@@ -68,17 +67,18 @@ function collectCoin(player, coin) {
  */
 function enablePlayerMovement() {
   player.body.velocity.x = 0;
-  if (keys.left.isDown || keyA.isDown) {
+  if (keys.left.isDown) {
     player.body.velocity.x = -150;
     player.animations.play("left");
-  } else if (keys.right.isDown || keyD.isDown) {
+  } else if (keys.right.isDown) {
     player.body.velocity.x = 150;
     player.animations.play("right");
   } else {
     player.animations.stop();
     player.frame = 4;
   }
-  if ((keys.up.isDown || keyW.isDown) && player.body.touching.down) {
+
+  if (keySpaceBar.isDown && player.body.touching.down) {
     player.body.velocity.y = -580;
     audioJump.play();
   }
