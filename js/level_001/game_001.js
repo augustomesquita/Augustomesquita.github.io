@@ -4,31 +4,25 @@
  * resgastar estes recursos posteriormente na função create.
  */
 function preload() {
-  this.load.audio("audioBackground", "audio/background.wav");
-  this.load.audio("audioCoin", "audio/coin.wav");
-  this.load.audio("audioJump", "audio/jump.wav");
-  this.load.image("imageBackgroundSky", "img/sky.png");
-  this.load.image("imagePlatform", "img/platform.png");
-  this.load.spritesheet("spriteDude", "img/dude.png", 40, 50);
-  this.load.spritesheet("spriteCoin", "img/coin_sheet.png", 24, 24);
+  game.load.audio("audioBackground", "audio/background.wav");
+  game.load.image("imageBackgroundSky", "img/sky.png");
+  game.load.image("imagePlatform", "img/platform.png");
+  commomPreload(); // preload comum, deve ser colocado no final.
 }
 
 /**
  * Aqui é a função chamada antes de entrar no game loop (função update)
  */
 function create() {
-  game.physics.startSystem(Phaser.Physics.ARCADE);
-  configSound("audioBackground");
-  configKeys();
   configSprites();
-  configPlayerHUD();
+  configBackgroundSound("audioBackground");
+  commomCreate(50, 450); // create comum, deve ser colocado no final.
 }
 
 /**
  * Game loop.
  */
 function update() {
-  enableCollision();
-  enablePlayerMovement();
+  commomUpdate(); // update comum, deve ser colocado no final.
 }
 

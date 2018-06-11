@@ -1,12 +1,14 @@
-/**
- * Configura sons da fase.
- */
-function configSound(backgroundSoundKey) {
+function configBackgroundSound(backgroundSoundKey) {
   audioBackground = new Phaser.Sound(game, backgroundSoundKey, 1, true);
   setTimeout(function() {
     audioBackground.play();
   }, 100);
+}
 
+/**
+ * Configura sons da fase.
+ */
+function configAudio() {
   audioCoin = game.add.audio("audioCoin");
   audioJump = game.add.audio("audioJump");
 }
@@ -23,8 +25,8 @@ function configKeys() {
 /**
  * Configura jogador e placar.
  */
-function configPlayerHUD() {
-  player = game.add.sprite(50, game.world.height - 150, "spriteDude");
+function configPlayerHUD(playerPositionX, playerPositionY) {
+  player = game.add.sprite(playerPositionX, playerPositionY, "spriteDude");
   game.physics.arcade.enable(player);
   player.body.gravity.y = 1000;
   player.body.bounce.y = 0.2;
@@ -39,47 +41,4 @@ function configPlayerHUD() {
     fontSize: "16px",
     fill: "#FFF"
   });
-}
-
-/**
- * Configura colisões.
- */
-function enableCollision() {
-  game.physics.arcade.collide(player, platforms);
-  game.physics.arcade.collide(coins, platforms);
-  game.physics.arcade.overlap(player, coins, collectCoin);
-}
-
-/**
- * Configura coleta de moeda.
- * @param {jogador} player
- * @param {moeda} coin
- */
-function collectCoin(player, coin) {
-  audioCoin.play();
-  coin.kill();
-  score += 10;
-  txtScore.text = "SCORE: " + score;
-}
-
-/**
- * Habilita movimentação do jogador.
- */
-function enablePlayerMovement() {
-  player.body.velocity.x = 0;
-  if (keys.left.isDown) {
-    player.body.velocity.x = -150;
-    player.animations.play("left");
-  } else if (keys.right.isDown) {
-    player.body.velocity.x = 150;
-    player.animations.play("right");
-  } else {
-    player.animations.stop();
-    player.frame = 4;
-  }
-
-  if (keySpaceBar.isDown && player.body.touching.down) {
-    player.body.velocity.y = -580;
-    audioJump.play();
-  }
 }
