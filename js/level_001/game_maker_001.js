@@ -1,4 +1,4 @@
-function configSprites() {
+function createSprites() {
   createBackground();
   createPlataforms();
   createCoins();

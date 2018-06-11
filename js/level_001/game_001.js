@@ -14,7 +14,7 @@ function preload() {
  * Aqui é a função chamada antes de entrar no game loop (função update)
  */
 function create() {
-  configSprites();
+  createSprites();
   configBackgroundSound("audioBackground");
   commomCreate(50, 450); // create comum, deve ser colocado no final.
 }
