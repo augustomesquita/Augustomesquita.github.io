@@ -1,4 +1,19 @@
 /**
+ * Variáveis comuns ao projeto.
+ */
+var platforms,
+  player,
+  keys,
+  coins,
+  audioBackground,
+  audioCoin,
+  audioJump,
+  txtScore,
+  score = 0;
+
+var keyW, keyA, keyD;
+
+/**
  * Configura colisões.
  */
 function enableCollision() {
