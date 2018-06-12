@@ -10,7 +10,27 @@ var conf = {
 
 var game = new Phaser.Game(conf);
 
-var main = {
+
+var gameTitle = {
+  preload: function() {
+    game.load.script("gameCommons", "js/game_commons.js");
+    game.load.script("gameConfig", "js/game_config.js");
+    game.load.script("gameLevel_001", "js/level_001/game_level_001.js");
+
+    game.load.audio("audioBackground", "audio/background.wav");
+    game.load.image("imageBackgroundTitle", "img/title.png");
+  },
+
+  create: function() {
+    game.add.sprite(0, 0, "imageBackgroundTitle");
+    configBackgroundSound("audioBackground");
+  }
+};
+
+game.state.add("stateGameTitle", gameTitle);
+game.state.start("stateGameTitle");
+
+var gameLevel001 = {
   preload: function() {
     game.load.script("gameCommons", "js/game_commons.js");
     game.load.script("gameConfig", "js/game_config.js");
@@ -23,5 +43,5 @@ var main = {
   }
 };
 
-game.state.add("Main", main);
-game.state.start("Main");
+game.state.add("stateGameLevel001", gameLevel001);
+game.state.start("stateGameLevel001");
