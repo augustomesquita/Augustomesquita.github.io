@@ -11,7 +11,7 @@ var platforms,
   txtScore,
   score = 0;
 
-var keyW, keyA, keyD;
+var keySpaceBar, keyW, keyA, keyD;
 
 /**
  * Configura colisões.
