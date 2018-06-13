@@ -1,16 +1,30 @@
 function createBackground() {
-  game.add.sprite(0, game.world.height - 600, "imageBackgroundSky");
+  game.add.sprite(0, gameLevel_001.bound_y - 600, "imageBackgroundSky");
 }
 
 function createPlataforms() {
-  // Define física das plataformas.
+  // Shortcut
+  var height = game.world.height;
+
+  // Habilita corpo para as
+  // plataformas.
   platforms = game.add.group();
   platforms.enableBody = true;
 
   // Cria plataformas.
-  platforms.create(0, game.world.height - 32, "imagePlatform").body.immovable = true;
-  platforms.create(400, game.world.height - 32, "imagePlatform").body.immovable = true;
-  platforms.create(800, game.world.height - 32, "imagePlatform").body.immovable = true;
+  // Chão
+  var allPlatforms = [];
+  allPlatforms.push(platforms.create(0, height - 32, "imagePlatform"));
+  allPlatforms.push(platforms.create(400, height - 32, "imagePlatform"));
+  allPlatforms.push(platforms.create(800, height - 32, "imagePlatform"));
+
+  // Flutuante
+  allPlatforms.push(platforms.create(400, height - 200, "imagePlatform"));
+  allPlatforms.push(platforms.create(-150, height - 350, "imagePlatform"));
+
+  // Habilita característica de não mover o corpo
+  // para todas as plataformas.
+  allPlatforms.forEach(plataform => (plataform.body.immovable = true));
 }
 
 function createCoins() {
