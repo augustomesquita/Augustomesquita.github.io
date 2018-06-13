@@ -14,7 +14,39 @@ var platforms,
 var keySpaceBar, keyW, keyA, keyD;
 
 /**
- * Configura colisões.
+ * Classe para criação de fases no jogo
+ */
+class GameLevel {
+  constructor(newLevel) {
+    this.preload = function() {
+      newLevel.preload();
+      game.load.audio("audioCoin", "audio/coin.wav");
+      game.load.audio("audioJump", "audio/jump.wav");
+      game.load.spritesheet("spriteDude", "img/dude.png", 40, 50);
+      game.load.spritesheet("spriteCoin", "img/coin_sheet.png", 24, 24);
+    };
+
+    this.create = function() {
+      newLevel.create();
+      game.physics.startSystem(Phaser.Physics.ARCADE);
+
+      audioCoin = game.add.audio("audioCoin");
+      audioJump = game.add.audio("audioJump");
+
+      enableKeys();
+      enablePlayerHUD(50, 450);
+    };
+
+    this.update = function() {
+      newLevel.update();
+      enableCollision();
+      enablePlayerMovement();
+    };
+  }
+}
+
+/**
+ * Habilita colisões.
  */
 function enableCollision() {
   game.physics.arcade.collide(player, platforms);
@@ -23,9 +55,9 @@ function enableCollision() {
 }
 
 /**
- * Configura coleta de moeda.
- * @param {jogador} player
- * @param {moeda} coin
+ * Realiza coleta de moeda.
+ * @param {object} player
+ * @param {object} coin
  */
 function collectCoin(player, coin) {
   audioCoin.play();
@@ -57,32 +89,44 @@ function enablePlayerMovement() {
 }
 
 /**
- * Preload comum com dados comuns a todos os preloads
- * do sistema.
+ * Recebe string do nome da música de fundo que deverá ser tocada
+ * pelo jogo na fase.
+ * @param {string} backgroundSoundKey
  */
-function commomPreload() {
-  game.load.audio("audioCoin", "audio/coin.wav");
-  game.load.audio("audioJump", "audio/jump.wav");
-  game.load.spritesheet("spriteDude", "img/dude.png", 40, 50);
-  game.load.spritesheet("spriteCoin", "img/coin_sheet.png", 24, 24);
+function enableBackgroundSound(backgroundSoundKey) {
+  audioBackground = new Phaser.Sound(game, backgroundSoundKey, 1, true);
+  setTimeout(function() {
+    audioBackground.play();
+  }, 100);
 }
 
 /**
- * Create comum com dados comuns a todos os creates
- * do sistema.
+ * Habilita teclas para jogar armazenando-as em variáveis.
  */
-function commomCreate(playerPositionX, playerPositionY) {
-  game.physics.startSystem(Phaser.Physics.ARCADE);
-  configKeys();
-  configPlayerHUD(playerPositionX, playerPositionY);
-  configAudio();
+function enableKeys() {
+  keys = game.input.keyboard.createCursorKeys();
+  keyA = game.input.keyboard.addKey(Phaser.Keyboard.A);
+  keySpaceBar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 }
 
 /**
- * Update comum com dados comuns a todos os updates
- * do sistema
+ * Habilita HUD do jogador com informações como score.
+ * e direitos autorais presentes nas fases.
  */
-function commomUpdate() {
-  enableCollision();
-  enablePlayerMovement();
+function enablePlayerHUD(playerPositionX, playerPositionY) {
+  player = game.add.sprite(playerPositionX, playerPositionY, "spriteDude");
+  game.physics.arcade.enable(player);
+  player.body.gravity.y = 1000;
+  player.body.bounce.y = 0.2;
+  player.body.collideWorldBounds = true;
+  player.animations.add("left", [0, 1, 2, 3], 10, true);
+  player.animations.add("right", [5, 6, 7, 8], 10, true);
+  txtScore = game.add.text(16, 24, "SCORE: 0", {
+    fontSize: "32px",
+    fill: "#fff"
+  });
+  game.add.text(250, 580, "Augusto Mesquita - Javascript Game", {
+    fontSize: "16px",
+    fill: "#FFF"
+  });
 }

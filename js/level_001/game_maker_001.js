@@ -1,9 +1,3 @@
-function createSprites() {
-  createBackground();
-  createPlataforms();
-  createCoins();
-}
-
 function createBackground() {
   game.add.sprite(0, 0, "imageBackgroundSky");
 }

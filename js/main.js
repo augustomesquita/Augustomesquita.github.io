@@ -1,4 +1,4 @@
-var conf = {
+var screen = {
   width: 800,
   height: 600,
   renderer: Phaser.AUTO,
@@ -8,21 +8,18 @@ var conf = {
   scaleMode: Phaser.ScaleManager.EXACT_FIT
 };
 
-var game = new Phaser.Game(conf);
+var game = new Phaser.Game(screen);
 
 var gameTitle = {
   preload: function() {
-    game.load.script("gameCommons", "js/game_commons.js");
-    game.load.script("gameConfig", "js/game_config.js");
     game.load.script("gameLevel_001", "js/level_001/game_level_001.js");
-
     game.load.audio("audioBackground", "audio/background.wav");
     game.load.image("imageBackgroundTitle", "img/title.png");
   },
 
   create: function() {
-    configKeys();
-    game.state.add("stateGameLevel001", gameLevel_001);
+    enableKeys();
+    game.state.add("stateGameLevel001", new GameLevel(gameLevel_001));
     game.add.sprite(0, 0, "imageBackgroundTitle");
     
     var titleCopyright = game.add.text(150, 500, "Augusto Mesquita - Javascript Game");
@@ -41,7 +38,7 @@ var gameTitle = {
     subtitleCopyright.stroke = '#FFF';
     subtitleCopyright.strokeThickness = 2;
 
-    configBackgroundSound("audioBackground");
+    enableBackgroundSound("audioBackground");
   },
 
   update: function() {
