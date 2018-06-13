@@ -34,6 +34,7 @@ class GameLevel {
     };
 
     this.create = function() {
+      audioBackground.stop();
       newLevel.create();
 
       game.physics.startSystem(Phaser.Physics.ARCADE);

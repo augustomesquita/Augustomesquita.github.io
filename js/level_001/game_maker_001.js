@@ -1,5 +1,6 @@
 function createBackground() {
-  game.add.sprite(0, game.world.height - 600, "imageBackgroundSky");
+  game.add.sprite(0, game.world.height - 980, "imageBackgroundSky");
+  game.add.sprite(1400, game.world.height - 980, "imageBackgroundSky");
 }
 
 function createPlataforms() {

@@ -13,7 +13,7 @@ var game = new Phaser.Game(screen);
 var gameTitle = {
   preload: function() {
     game.load.script("gameLevel_001", "js/level_001/game_level_001.js");
-    game.load.audio("audioBackground", "audio/background.wav");
+    game.load.audio("audioTitle", "audio/background.wav");
     game.load.image("imageBackgroundTitle", "img/title.png");
   },
 
@@ -38,7 +38,7 @@ var gameTitle = {
     subtitleCopyright.stroke = '#FFF';
     subtitleCopyright.strokeThickness = 2;
 
-    enableBackgroundSound("audioBackground");
+    enableBackgroundSound("audioTitle");
   },
 
   update: function() {
