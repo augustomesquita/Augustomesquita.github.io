@@ -1,7 +1,7 @@
 /**
  * Variáveis comuns ao projeto.
  */
-var invisibleBoundGroup,
+var hiddenBounds,
   platforms,
   player,
   keys,
@@ -58,25 +58,26 @@ class GameLevel {
  * Habilita colisão horizontal do mapa.
  */
 function enableHorizontalBoundColision(level) {
-  invisibleBoundGroup = game.add.group();
-  invisibleBoundGroup.enableBody = true;
-  var invisibleBound = invisibleBoundGroup.create(0, 0, "invisibleBound");
-  invisibleBound.body.immovable = true;
-  invisibleBound.height = level.bound_y;
-  invisibleBound = invisibleBoundGroup.create(
-    level.bound_x,
-    0,
-    "invisibleBound"
-  );
-  invisibleBound.body.immovable = true;
-  invisibleBound.height = level.bound_y;
+  var width = level.bound_x;
+
+  hiddenBounds = game.add.group();
+  hiddenBounds.enableBody = true;
+
+  var allHiddenBound = [];
+  allHiddenBound.push(hiddenBounds.create(0, 0, "invisibleBound"));
+  allHiddenBound.push(hiddenBounds.create(width, 0, "invisibleBound"));
+
+  allHiddenBound.forEach(invisibleBound => {
+    invisibleBound.body.immovable = true;
+    invisibleBound.height = level.bound_y;
+  });
 }
 
 /**
  * Habilita colisões.
  */
 function enableCollision() {
-  game.physics.arcade.collide(player, invisibleBoundGroup);
+  game.physics.arcade.collide(player, hiddenBounds);
   game.physics.arcade.collide(player, platforms);
   game.physics.arcade.collide(coins, platforms);
   game.physics.arcade.overlap(player, coins, collectCoin);
