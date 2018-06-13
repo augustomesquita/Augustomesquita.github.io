@@ -7,11 +7,15 @@ var gameLevel_001 = {
   },
 
   create: function() {
+    setInitialCameraPosition(game.world.height, 0);
     createBackground();
     createPlataforms();
     createCoins();
     enableBackgroundSound("audioBackground");
   },
 
-  update: function () {}
+  update: function() {},
+
+  bound_x: 2000, // Dimensão horizontal do mundo
+  bound_y: 2000 // Dimensão vertical do mundo
 };

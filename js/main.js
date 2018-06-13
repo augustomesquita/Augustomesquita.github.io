@@ -18,9 +18,9 @@ var gameTitle = {
   },
 
   create: function() {
-    enableKeys();
     game.state.add("stateGameLevel001", new GameLevel(gameLevel_001));
     game.add.sprite(0, 0, "imageBackgroundTitle");
+    enableKeys();
     
     var titleCopyright = game.add.text(150, 500, "Augusto Mesquita - Javascript Game");
     titleCopyright.font = 'Arial Black';
