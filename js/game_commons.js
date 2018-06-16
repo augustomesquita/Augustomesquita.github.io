@@ -125,7 +125,7 @@ function enablePlayerMovement(level) {
   }
 
   // Camera segue o personagem.
-  game.camera.follow(player, null, 0.1, 0.1);
+  game.camera.follow(player, null, 0.3, 0.3);
 }
 
 /**
