@@ -51,6 +51,8 @@ class GameLevel {
       newLevel.update();
       enableCollision();
       enablePlayerMovement(newLevel);
+      txtScore.x = game.camera.x + 16;
+      txtScore.y = game.camera.y + 24;
     };
   }
 }
@@ -171,14 +173,19 @@ function enablePlayer(playerPositionX, playerPositionY) {
  * e direitos autorais presentes nas fases.
  */
 function enableHUD() {
-  txtScore = game.add.text(16, 24, "SCORE: 0", {
+  txtScore = game.add.text(game.camera.x + 16, game.camera.y + 24, "SCORE: 0", {
     fontSize: "32px",
     fill: "#fff"
   });
-  game.add.text(250, 580, "Augusto Mesquita - Javascript Game", {
-    fontSize: "16px",
-    fill: "#FFF"
-  });
+  game.add.text(
+    game.camera.x + 250,
+    game.camera.x + 580,
+    "Augusto Mesquita - Javascript Game",
+    {
+      fontSize: "16px",
+      fill: "#FFF"
+    }
+  );
 }
 
 /**

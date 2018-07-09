@@ -14,7 +14,8 @@ var gameLevel_001 = {
     enableBackgroundSound("audioBackground");
   },
 
-  update: function() {},
+  update: function() {
+  },
 
   bound_x: 2000, // Dimensão horizontal do mundo
   bound_y: 2000 // Dimensão vertical do mundo
