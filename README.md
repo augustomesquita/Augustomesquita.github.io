@@ -1,10 +1,4 @@
-﻿
-# Mini-game em Javascript
-Mini-game criado utilizando Javascript com biblioteca Phaser 2 para realização de testes de conceito e ténicas.
+Portfolio - Augusto Mesquita
+=========
 
-## Colete as moedas
-Você só precisa juntar as moedas da fase. Para reiniciar o game, recarregue a página.
-
-![](screenshots/game.png)
-
-O código está bem simples e comentado. É possível utilizá-lo como base para criação de seus jogos em javascript. Espero que gostem. Aproveitem!
+A simple portfolio that show a little bit about my professional career. I hope you find what are you looking for. Enjoy!
