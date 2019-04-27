@@ -316,7 +316,7 @@ var DialogConfirmComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"example-container\">\r\n  <form [formGroup]=\"matchForm\" (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <mat-form-field>\r\n        <mat-select formControlName=\"player\" placeholder=\"Jogador\">\r\n          <mat-option value=\"Augusto\">Augusto</mat-option>\r\n          <mat-option value=\"Alexandre\">Alexandre</mat-option>\r\n          <mat-option value=\"André\">André</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div>\r\n      <mat-form-field>\r\n        <input type=\"text\" formControlName=\"champion\" matInput placeholder=\"Campeão\" />\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"m-margin-top\">\r\n      <mat-form-field>\r\n        <input [value]=\"date.value\" matInput [matDatepicker]=\"picker\" placeholder=\"Escolha uma data\" />\r\n        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n        <mat-datepicker #picker></mat-datepicker>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"m-margin-top\" style=\"text-align: center\">\r\n      <mat-radio-group formControlName=\"result\">\r\n        <mat-radio-button value=\"true\">Vitória</mat-radio-button>\r\n        <mat-radio-button style=\"margin-left: 10px\" value=\"false\">Derrota</mat-radio-button>\r\n      </mat-radio-group>\r\n    </div>\r\n\r\n    <div class=\"m-margin-top-large\" style=\"text-align: center\">\r\n        <button mat-raised-button  (click)=\"backClick()\">VOLTAR</button>\r\n        <button style=\"margin-left: 10px\" type=\"submit\" mat-raised-button color=\"primary\">ADICIONAR</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"example-container\">\r\n  <form [formGroup]=\"matchForm\" (ngSubmit)=\"onSubmit()\">\r\n    <div>\r\n      <mat-form-field>\r\n        <mat-select formControlName=\"player\" placeholder=\"Jogador\">\r\n          <mat-option value=\"Augusto\">Augusto</mat-option>\r\n          <mat-option value=\"Alexandre\">Alexandre</mat-option>\r\n          <mat-option value=\"André\">André</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div>\r\n      <mat-form-field>\r\n        <input type=\"text\" formControlName=\"champion\" matInput placeholder=\"Campeão\" />\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"m-margin-top\">\r\n      <mat-form-field>\r\n        <input [value]=\"date.value\" matInput [matDatepicker]=\"picker\" placeholder=\"Escolha uma data\" (dateChange)=\"dateChanged($event)\" />\r\n        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n        <mat-datepicker #picker></mat-datepicker>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div class=\"m-margin-top\" style=\"text-align: center\">\r\n      <mat-radio-group formControlName=\"result\">\r\n        <mat-radio-button value=\"true\">Vitória</mat-radio-button>\r\n        <mat-radio-button style=\"margin-left: 10px\" value=\"false\">Derrota</mat-radio-button>\r\n      </mat-radio-group>\r\n    </div>\r\n\r\n    <div class=\"m-margin-top-large\" style=\"text-align: center\">\r\n        <button mat-raised-button  (click)=\"backClick()\">VOLTAR</button>\r\n        <button style=\"margin-left: 10px\" type=\"submit\" mat-raised-button color=\"primary\">ADICIONAR</button>\r\n    </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -359,6 +359,7 @@ var DialogMatchComponent = /** @class */ (function () {
         this.snackBar = snackBar;
         this.globals = globals;
         this.matchAdded = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.lastDateChanged = new Date();
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date(), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
         this.matchForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             player: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('Augusto', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
@@ -374,7 +375,7 @@ var DialogMatchComponent = /** @class */ (function () {
         var _this = this;
         if (this.matchForm.valid) {
             var matchToPost_1 = this.matchForm.value;
-            matchToPost_1.date = matchToPost_1.date.getTime(); // Passa para millis
+            matchToPost_1.date = this.lastDateChanged.getTime(); // Passa para millis
             this.client = mongodb_stitch_browser_sdk__WEBPACK_IMPORTED_MODULE_4__["Stitch"].getAppClient(this.globals.atlasClientIpId);
             this.db = this.client
                 .getServiceClient(mongodb_stitch_browser_sdk__WEBPACK_IMPORTED_MODULE_4__["RemoteMongoClient"].factory, this.globals.atlasServiceName)
@@ -411,6 +412,9 @@ var DialogMatchComponent = /** @class */ (function () {
                 this.dialogRef.close();
             }
         }
+    };
+    DialogMatchComponent.prototype.dateChanged = function (event) {
+        this.lastDateChanged = event.target.value;
     };
     DialogMatchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
