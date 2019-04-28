@@ -5,33 +5,21 @@
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
   \**********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var map = {
-	"src/app/home/home.module": [
-		"./src/app/home/home.module.ts",
-		"src-app-home-home-module"
-	]
-};
-function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids) {
-		return Promise.resolve().then(function() {
-			var e = new Error("Cannot find module '" + req + "'");
-			e.code = 'MODULE_NOT_FOUND';
-			throw e;
-		});
-	}
-	return __webpack_require__.e(ids[1]).then(function() {
-		var id = ids[0];
-		return __webpack_require__(id);
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(function() {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
 	});
 }
-webpackAsyncContext.keys = function webpackAsyncContextKeys() {
-	return Object.keys(map);
-};
-webpackAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
-module.exports = webpackAsyncContext;
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
@@ -48,12 +36,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _home_home_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home-layout.component */ "./src/app/home/home-layout.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+
+
 
 
 
 var routes = [
-    { path: 'home', loadChildren: 'src/app/home/home.module#HomeModule' },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    {
+        path: '', component: _home_home_layout_component__WEBPACK_IMPORTED_MODULE_3__["HomeLayoutComponent"],
+        children: [
+            { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] }
+        ]
+    }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -149,10 +145,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_globals_util__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/globals.util */ "./src/app/home/globals.util.ts");
 /* harmony import */ var _home_home_layout_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/home-layout.component */ "./src/app/home/home-layout.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _home_home_routing_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./home/home.routing.module */ "./src/app/home/home.routing.module.ts");
-/* harmony import */ var _my_date_adapter_util__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./my-date-adapter.util */ "./src/app/my-date-adapter.util.ts");
-/* harmony import */ var _my_hammer_config_util__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./my-hammer-config.util */ "./src/app/my-hammer-config.util.ts");
-
+/* harmony import */ var _my_date_adapter_util__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./my-date-adapter.util */ "./src/app/my-date-adapter.util.ts");
+/* harmony import */ var _my_hammer_config_util__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./my-hammer-config.util */ "./src/app/my-hammer-config.util.ts");
 
 
 
@@ -190,7 +184,6 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
-                _home_home_routing_module__WEBPACK_IMPORTED_MODULE_15__["HomeRoutingModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatGridListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"],
@@ -228,9 +221,9 @@ var AppModule = /** @class */ (function () {
             providers: [
                 _home_globals_util__WEBPACK_IMPORTED_MODULE_12__["Globals"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDatepickerModule"],
-                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_3__["DateAdapter"], useClass: _my_date_adapter_util__WEBPACK_IMPORTED_MODULE_16__["MyDateAdapter"] },
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_3__["DateAdapter"], useClass: _my_date_adapter_util__WEBPACK_IMPORTED_MODULE_15__["MyDateAdapter"] },
                 { provide: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DATE_FORMATS"], useValue: MY_DATE_FORMATS },
-                { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["HAMMER_GESTURE_CONFIG"], useClass: _my_hammer_config_util__WEBPACK_IMPORTED_MODULE_17__["MyHammerConfig"] }
+                { provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["HAMMER_GESTURE_CONFIG"], useClass: _my_hammer_config_util__WEBPACK_IMPORTED_MODULE_16__["MyHammerConfig"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
             entryComponents: [_dialog_match_dialog_match_component__WEBPACK_IMPORTED_MODULE_11__["DialogMatchComponent"], _dialog_confirm_dialog_confirm_component__WEBPACK_IMPORTED_MODULE_10__["DialogConfirmComponent"]]
@@ -737,52 +730,6 @@ var HomeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"], _globals_util__WEBPACK_IMPORTED_MODULE_4__["Globals"]])
     ], HomeComponent);
     return HomeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/home/home.routing.module.ts":
-/*!*********************************************!*\
-  !*** ./src/app/home/home.routing.module.ts ***!
-  \*********************************************/
-/*! exports provided: HomeRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRoutingModule", function() { return HomeRoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _home_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home-layout.component */ "./src/app/home/home-layout.component.ts");
-/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home.component */ "./src/app/home/home.component.ts");
-
-
-
-
-
-// A rota de login para cair neste children primeiro, o valor do children
-// deve ser o mesmo valor do path.
-var homeRoutes = [
-    {
-        path: '', component: _home_layout_component__WEBPACK_IMPORTED_MODULE_3__["HomeLayoutComponent"],
-        children: [
-            { path: '', component: _home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] }
-        ]
-    }
-];
-var HomeRoutingModule = /** @class */ (function () {
-    function HomeRoutingModule() {
-    }
-    HomeRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(homeRoutes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-        })
-    ], HomeRoutingModule);
-    return HomeRoutingModule;
 }());
 
 
