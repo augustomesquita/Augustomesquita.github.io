@@ -148,6 +148,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _my_date_adapter_util__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./my-date-adapter.util */ "./src/app/my-date-adapter.util.ts");
 /* harmony import */ var _my_hammer_config_util__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./my-hammer-config.util */ "./src/app/my-hammer-config.util.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 
@@ -187,6 +189,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatGridListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogModule"],
@@ -201,6 +204,7 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDatepickerModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBarModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 ngx_spinner__WEBPACK_IMPORTED_MODULE_7__["NgxSpinnerModule"],
@@ -221,7 +225,8 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDatepickerModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatNativeDateModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatAutocompleteModule"]
             ],
             providers: [
                 _home_globals_util__WEBPACK_IMPORTED_MODULE_13__["Globals"],
@@ -314,7 +319,7 @@ var DialogConfirmComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"example-container\">\n    <form [formGroup]=\"matchForm\" (ngSubmit)=\"onSubmit()\">\n        <div>\n            <mat-form-field>\n                <mat-select formControlName=\"player\" placeholder=\"Jogador\">\n                    <mat-option value=\"Augusto\">Augusto</mat-option>\n                    <mat-option value=\"Alexandre\">Alexandre</mat-option>\n                    <mat-option value=\"André\">André</mat-option>\n                </mat-select>\n            </mat-form-field>\n        </div>\n\n        <div>\n            <mat-form-field>\n                <input type=\"text\" formControlName=\"champion\" matInput placeholder=\"Campeão\" />\n            </mat-form-field>\n        </div>\n\n        <div class=\"m-margin-top\">\n            <mat-form-field>\n                <input [value]=\"date.value\" matInput [matDatepicker]=\"picker\" placeholder=\"Escolha uma data\" (dateChange)=\"dateChanged($event)\" />\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker></mat-datepicker>\n            </mat-form-field>\n        </div>\n\n        <div class=\"m-margin-top\" style=\"text-align: center\">\n            <mat-radio-group formControlName=\"result\">\n                <mat-radio-button value=\"true\">Vitória</mat-radio-button>\n                <mat-radio-button style=\"margin-left: 10px\" value=\"false\">Derrota</mat-radio-button>\n            </mat-radio-group>\n        </div>\n\n        <div class=\"m-margin-top\" style=\"text-align: center\">\n            <mat-checkbox formControlName=\"perfect\">KDA Perfeito</mat-checkbox>\n        </div>\n\n        <div class=\"m-margin-top-large\" style=\"text-align: center\">\n            <button mat-raised-button (click)=\"backClick()\">VOLTAR</button>\n            <button style=\"margin-left: 10px\" type=\"submit\" mat-raised-button color=\"primary\">ADICIONAR</button>\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"example-container\">\n    <form [formGroup]=\"matchForm\" (ngSubmit)=\"onSubmit()\">\n        <div>\n            <mat-form-field>\n                <mat-select formControlName=\"player\" placeholder=\"Jogador\">\n                    <mat-option value=\"Augusto\">Augusto</mat-option>\n                    <mat-option value=\"Alexandre\">Alexandre</mat-option>\n                    <mat-option value=\"André\">André</mat-option>\n                </mat-select>\n            </mat-form-field>\n        </div>\n\n        <div>\n            <mat-form-field>\n                <input type=\"text\" formControlName=\"champion\" matInput placeholder=\"Campeão\" [matAutocomplete]=\"auto\" />\n                <mat-autocomplete #auto=\"matAutocomplete\">\n                    <mat-option *ngFor=\"let champion of filteredChampionList | async\" [value]=\"champion\">\n                        {{champion}}\n                    </mat-option>\n                </mat-autocomplete>\n            </mat-form-field>\n        </div>\n\n        <div class=\"m-margin-top\">\n            <mat-form-field>\n                <input [value]=\"date.value\" matInput [matDatepicker]=\"picker\" placeholder=\"Escolha uma data\" (dateChange)=\"dateChanged($event)\" />\n                <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n                <mat-datepicker #picker></mat-datepicker>\n            </mat-form-field>\n        </div>\n\n        <div class=\"m-margin-top\" style=\"text-align: center\">\n            <mat-radio-group formControlName=\"result\">\n                <mat-radio-button value=\"true\">Vitória</mat-radio-button>\n                <mat-radio-button style=\"margin-left: 10px\" value=\"false\">Derrota</mat-radio-button>\n            </mat-radio-group>\n        </div>\n\n        <div class=\"m-margin-top\" style=\"text-align: center\">\n            <mat-checkbox formControlName=\"perfect\">KDA Perfeito</mat-checkbox>\n        </div>\n\n        <div class=\"m-margin-top-large\" style=\"text-align: center\">\n            <button mat-raised-button (click)=\"backClick()\">VOLTAR</button>\n            <button style=\"margin-left: 10px\" type=\"submit\" mat-raised-button color=\"primary\">ADICIONAR</button>\n        </div>\n    </form>\n</div>"
 
 /***/ }),
 
@@ -345,6 +350,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var mongodb_stitch_browser_sdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mongodb-stitch-browser-sdk */ "./node_modules/mongodb-stitch-browser-sdk/dist/esm/index.js");
 /* harmony import */ var _home_globals_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../home/globals.util */ "./src/app/home/globals.util.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
 
 
 
@@ -352,21 +361,38 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var DialogMatchComponent = /** @class */ (function () {
-    function DialogMatchComponent(dialogRef, snackBar, globals) {
+    function DialogMatchComponent(dialogRef, snackBar, globals, http) {
         this.dialogRef = dialogRef;
         this.snackBar = snackBar;
         this.globals = globals;
+        this.http = http;
         this.matchAdded = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.lastDateChangedInMillis = new Date().getTime();
+        this.championControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
         this.date = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](new Date(), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
         this.matchForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             player: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('Augusto', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             result: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('true', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            champion: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            champion: this.championControl,
             perfect: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](false),
-            date: this.date,
+            date: this.date
         });
     }
+    DialogMatchComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http
+            .get('http://ddragon.leagueoflegends.com/cdn/9.3.1/data/pt_BR/champion.json')
+            .subscribe(function (data) {
+            _this.championList = Object.keys(data.data);
+            _this.filteredChampionList = _this.championControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (value) { return _this._filter(value); }));
+        });
+    };
+    DialogMatchComponent.prototype._filter = function (value) {
+        var filterValue = value.toLowerCase();
+        return this.championList.filter(function (option) {
+            return option.toLowerCase().includes(filterValue);
+        });
+    };
     DialogMatchComponent.prototype.backClick = function () {
         this.dialogRef.close();
     };
@@ -382,11 +408,7 @@ var DialogMatchComponent = /** @class */ (function () {
             if (this.client && this.db) {
                 this.client.auth
                     .loginWithCredential(new mongodb_stitch_browser_sdk__WEBPACK_IMPORTED_MODULE_4__["AnonymousCredential"]())
-                    .then(function () {
-                    return _this.db
-                        .collection('historical')
-                        .insertOne(matchToPost_1);
-                })
+                    .then(function () { return _this.db.collection('historical').insertOne(matchToPost_1); })
                     .then(function (result) {
                     if (result.insertedId) {
                         _this.snackBar.open('Partida adicionada com sucesso.', 'Pronto!', {
@@ -418,7 +440,7 @@ var DialogMatchComponent = /** @class */ (function () {
         this.lastDateChangedInMillis += this.milisecondsFromHourMinutesAndSeconds(dateNow.getHours(), dateNow.getMinutes(), dateNow.getSeconds());
     };
     DialogMatchComponent.prototype.milisecondsFromHourMinutesAndSeconds = function (hrs, min, sec) {
-        return ((hrs * 60 * 60 + min * 60 + sec) * 1000);
+        return (hrs * 60 * 60 + min * 60 + sec) * 1000;
     };
     DialogMatchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -428,7 +450,8 @@ var DialogMatchComponent = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
             _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatSnackBar"],
-            _home_globals_util__WEBPACK_IMPORTED_MODULE_5__["Globals"]])
+            _home_globals_util__WEBPACK_IMPORTED_MODULE_5__["Globals"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]])
     ], DialogMatchComponent);
     return DialogMatchComponent;
 }());
@@ -904,4 +927,4 @@ module.exports = __webpack_require__(/*! /home/augusto/Projetos/skinto/src/main.
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.3eafced26648b9eca0f0.js.map
+//# sourceMappingURL=main.32871d134623967e61f7.js.map
