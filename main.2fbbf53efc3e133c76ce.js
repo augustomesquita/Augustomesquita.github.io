@@ -377,12 +377,11 @@ var DialogMatchComponent = /** @class */ (function () {
             perfect: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](false),
             date: this.date
         });
-        this.championWasSelected = false;
     }
     DialogMatchComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.http
-            .get('http://ddragon.leagueoflegends.com/cdn/9.10.1/data/pt_BR/champion.json')
+            .get('http://ddragon.leagueoflegends.com/cdn/9.3.1/data/pt_BR/champion.json')
             .subscribe(function (data) {
             _this.championList = Object.keys(data.data);
             _this.filteredChampionList = _this.championControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (value) { return _this._filter(value); }));
@@ -399,9 +398,6 @@ var DialogMatchComponent = /** @class */ (function () {
     };
     DialogMatchComponent.prototype.onSubmit = function () {
         var _this = this;
-        if (!this.championWasSelected) {
-            this.championControl.patchValue('');
-        }
         if (this.matchForm.valid) {
             var matchToPost_1 = this.matchForm.value;
             matchToPost_1.date = this.lastDateChangedInMillis; // Passa para millis
@@ -445,15 +441,6 @@ var DialogMatchComponent = /** @class */ (function () {
     };
     DialogMatchComponent.prototype.milisecondsFromHourMinutesAndSeconds = function (hrs, min, sec) {
         return (hrs * 60 * 60 + min * 60 + sec) * 1000;
-    };
-    DialogMatchComponent.prototype.championSelection = function (champion) {
-        if (champion) {
-            this.championWasSelected = true;
-        }
-    };
-    DialogMatchComponent.prototype.invalidateChampionSelected = function () {
-        console.log('INVALIDOU');
-        this.championWasSelected = false;
     };
     DialogMatchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -976,4 +963,4 @@ module.exports = __webpack_require__(/*! /home/augusto/Projetos/skinto/src/main.
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.3f41f6f5a7030ec3b7fd.js.map
+//# sourceMappingURL=main.2fbbf53efc3e133c76ce.js.map
