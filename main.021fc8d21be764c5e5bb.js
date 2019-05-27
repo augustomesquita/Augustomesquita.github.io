@@ -381,7 +381,10 @@ var DialogMatchComponent = /** @class */ (function () {
     DialogMatchComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.http
-            .get('http://ddragon.leagueoflegends.com/cdn/9.3.1/data/pt_BR/champion.json')
+            .get(
+        // 'http://ddragon.leagueoflegends.com/cdn/9.10.1/data/pt_BR/champion.json'
+        '../../assets/json/champion.json' // Arquivo JSON do endereço acima
+        )
             .subscribe(function (data) {
             _this.championList = Object.keys(data.data);
             _this.filteredChampionList = _this.championControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (value) { return _this._filter(value); }));
@@ -963,4 +966,4 @@ module.exports = __webpack_require__(/*! /home/augusto/Projetos/skinto/src/main.
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.2fbbf53efc3e133c76ce.js.map
+//# sourceMappingURL=main.021fc8d21be764c5e5bb.js.map
