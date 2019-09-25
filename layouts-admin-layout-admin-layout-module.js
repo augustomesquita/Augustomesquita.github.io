@@ -64726,8 +64726,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent() {
     }
-    DashboardComponent.prototype.ngOnInit = function () {
-    };
+    DashboardComponent.prototype.ngOnInit = function () { };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-dashboard",
@@ -64867,24 +64866,24 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TableListComponent = /** @class */ (function () {
     function TableListComponent() {
         this.knowledgeProgramLanguageList = [
-            { name: "Java", level: 5 },
-            { name: "Javascript", level: 5 },
             { name: "JSP / JSTL", level: 5 },
-            { name: "Typescript", level: 4 },
-            { name: "MongoDB", level: 4 },
+            { name: "Java", level: 4 },
+            { name: "Javascript", level: 4 },
+            { name: "Typescript", level: 3 },
+            { name: "MongoDB", level: 3 },
             { name: "Kotlin", level: 3 },
             { name: "MySQL / PostgreSQL", level: 3 },
             { name: "Shell Script", level: 3 },
             { name: "C#", level: 2 },
             { name: "C++", level: 2 },
             { name: "C", level: 2 },
-            { name: "Swift", level: 1 },
+            { name: "Swift", level: 1 }
         ];
         this.knowledgeProgramToolList = [
-            { name: "Spring Boot", level: 5 },
+            { name: "Spring Boot", level: 4 },
             { name: "Angular", level: 4 },
-            { name: "Spring Data", level: 4 },
-            { name: "Spring MVC", level: 4 },
+            { name: "Spring Data", level: 3 },
+            { name: "Spring MVC", level: 3 },
             { name: "Socket IO", level: 3 },
             { name: "Spring Security", level: 3 },
             { name: "Web Socket", level: 3 },
