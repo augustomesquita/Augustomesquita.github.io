@@ -64661,6 +64661,17 @@ MatTreeNestedDataSource = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/blog/blog.component.html":
+/*!********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/blog/blog.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content animated fadeIn\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n\n\n      <ng-container *ngFor=\"let post of blogPosts\">\n        <div class=\"col-lg-4 col-md-6 col-sm-6\" *ngIf=\"post.title != 'Contato'\">\n          <a href=\"{{post.link}}\" target=\"_blank\">\n\n            <div class=\"card card-stats box\">\n              <div class=\"card-header card-header-text text-center\" style=\"margin-top:5%\">\n                <img class=\"img img-responsive\" src=\"{{post.thumbnail}}\" style=\"max-width: 75%\" />\n              </div>\n              <div class=\"card-body m-card-body-size text-center\">\n                <h4 class=\"card-title\"><b>{{post.title}}</b></h4>\n              </div>\n            </div>\n          </a>\n        </div>\n      </ng-container>\n\n    </div>\n  </div>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/dashboard/dashboard.component.html":
 /*!******************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/dashboard/dashboard.component.html ***!
@@ -64668,7 +64679,7 @@ MatTreeNestedDataSource = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <div class=\"col-lg-6 col-md-6 col-sm-6\">\n                <div class=\"card card-stats\">\n                    <div class=\"card-header card-header-info text-center\">\n                        <img class=\"img\" src=\"./assets/img/projects/todohotel.png\" style=\"max-width: 180px\" />\n                    </div>\n                    <div class=\"card-body m-card-body-size text-center\">\n                        <h4 class=\"card-title\"><b>To.Do Hotel</b></h4>\n                        <p class=\"card-category\">\n                            <b>Sistema de governança hoteleira.</b><br /><br />\n                            Atuação como lider técnico e desenvolvedor do produto. Criação / manutenção da aplicação\n                            móvel (android), back-end, banco de dados e front-end <b>(Software Proprietário)</b>.\n                        </p>\n                    </div>\n                    <div class=\"card-footer\">\n                        <div class=\"stats\">\n                            <b><a href=\"https://www.leucotron.com.br/todo-hotel\" target=\"_blank\">Mais informações sobre\n                                    o\n                                    produto</a></b>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-6 col-md-6 col-sm-6\">\n                <div class=\"card card-stats\">\n                    <div class=\"card-header card-header-info text-center\">\n                        <img class=\"img\" src=\"./assets/img/projects/flux.png\" style=\"max-width: 200px\" />\n                    </div>\n                    <div class=\"card-body m-card-body-size text-center\">\n                        <h4 class=\"card-title\"><b>Flux IP</b></h4>\n                        <p class=\"card-category\">\n                            <b>Central Telefônica PABX.</b><br /><br />\n                            Atuação como desenvolvedor do produto. Criação / manutenção de aplicação back-end e de\n                            rotinas em shell script <b>(Software Proprietário)</b>.\n                        </p>\n                    </div>\n                    <div class=\"card-footer\">\n                        <div class=\"stats\">\n                            <b><a href=\"https://www.leucotron.com.br/pabx-flux-ip\" target=\"_blank\">Mais informações sobre\n                                    o\n                                    produto </a></b>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-6 col-md-6 col-sm-6\">\n                <div class=\"card card-stats\">\n                    <div class=\"card-header card-header-info text-center\">\n                        <img class=\"img\" src=\"./assets/img/projects/ultrarec.png\" style=\"max-width: 145px\" />\n                    </div>\n                    <div class=\"card-body m-card-body-size text-center\">\n                        <h4 class=\"card-title\"><b>Ultra Rec</b></h4>\n                        <p class=\"card-category\">\n                            <b>Sistema de gravação para Centrais Telefônicas.</b><br /><br />\n                            Atuação como desenvolvedor do produto. Criação / manutenção do back-end, banco de dados e\n                            front-end <b>(Software Proprietário)</b>.\n                        </p>\n                    </div>\n                    <div class=\"card-footer\">\n                        <div class=\"stats text-black-50\">\n                            <b>Sem mais informações sobre o produto</b>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-6 col-md-6 col-sm-6\">\n                <div class=\"card card-stats\">\n                    <div class=\"card-header card-header-success text-center\">\n                        <img class=\"img\" src=\"./assets/img/projects/control.png\" style=\"max-width: 53px\" />\n                    </div>\n                    <div class=\"card-body m-card-body-size text-center\">\n                        <h4 class=\"card-title\"><b>GamerStory</b></h4>\n                        <p class=\"card-category\">\n                            <b>Aplicativo Android (usando Kotlin) para armazenamento dos jogos que você já\n                                finalizou com sistema de pontuação</b><br /><br />\n                            Atuação como idealizador, desenvolvedor e designer <b>(Projeto Pessoal)</b>.\n                        </p>\n                    </div>\n                    <div class=\"card-footer\">\n                        <div class=\"stats text-black-50\">\n                            <b><a href=\"https://play.google.com/store/apps/details?id=com.mesquita.augusto.mygamerscore\"\n                                    target=\"_blank\">Mais\n                                    informações sobre o\n                                    projeto </a></b>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-6 col-md-6 col-sm-6\">\n                <div class=\"card card-stats\">\n                    <div class=\"card-header card-header-success text-center\">\n                        <img class=\"img\" src=\"./assets/img/projects/soccer.png\" style=\"max-width: 53px\" />\n                    </div>\n                    <div class=\"card-body m-card-body-size text-center\">\n                        <h4 class=\"card-title\"><b>Aventuras do Futebol</b></h4>\n                        <p class=\"card-category\">\n                            <b>RPG para Desktop (compatível com Windows) feito em C, inspirado na franquia Zelda do SNES.</b><br /><br />\n                            Atuação como idealizador, desenvolvedor e designer do projeto <b>(Projeto Pessoal / Open Source)</b>.\n                        </p>\n                    </div>\n                    <div class=\"card-footer\">\n                        <div class=\"stats text-black-50\">\n                            <b><a href=\"https://github.com/Augustomesquita/aventuras-do-futebol\" target=\"_blank\">Mais\n                                    informações sobre o\n                                    projeto </a></b>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-lg-6 col-md-6 col-sm-6\">\n                <div class=\"card card-stats\">\n                    <div class=\"card-header card-header-success text-center\">\n                        <img class=\"img\" src=\"./assets/img/projects/skinto.png\" style=\"max-width: 53px\" />\n                    </div>\n                    <div class=\"card-body m-card-body-size text-center\">\n                        <h4 class=\"card-title\"><b>Skinto</b></h4>\n                        <p class=\"card-category\">\n                            <b>Aplicação Web (Mobile First) para realização de pontuação de campeonato local do jogo\n                                League of Legends.\n                            </b><br /><br />\n                            Atuação como idealizador, desenvolvedor e designer do projeto <b>(Projeto Pessoal / Open Source)</b>.\n                        </p>\n                    </div>\n                    <div class=\"card-footer\">\n                        <div class=\"stats text-black-50\">\n                            <b><a href=\"https://github.com/Augustomesquita/skinto\" target=\"_blank\">Mais\n                                    informações sobre o\n                                    projeto </a></b>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n\n        </div>\n    </div>"
+module.exports = "<div class=\"main-content animated fadeIn\">\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <div class=\"col-lg-4 col-md-6 col-sm-6\" *ngFor=\"let experiance of experiances\">\n                <a href=\"{{experiance.link}}\" target=\"_blank\">\n                    <div class=\"card card-stats box\">\n                        <div class=\"card-header text-center\" [ngClass]=\"customHeaderClass(experiance)\" >\n                            <img class=\"img\" src=\"{{experiance.imgUrl}}\" [ngStyle]=\"customMaxWidth(experiance)\" />\n                        </div>\n                        <div class=\"card-body m-card-body-size text-center\">\n                            <h4 class=\"card-title\"><b>{{experiance.title}}</b></h4>\n                            <div class=\"card-category\">\n                                <div><b>{{experiance.subtitle}}</b></div>\n                                <div class=\"m-margin-top\">{{experiance.content}}</div>\n                            </div>\n                        </div>\n                    </div>\n                </a>\n            </div>\n\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -64679,7 +64690,7 @@ module.exports = "<div class=\"main-content\">\n    <div class=\"container-fluid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <!-- Lista de linguagens de programação -->\n            <div class=\"col-md-6\">\n                <div class=\"card\">\n                    <div class=\"card-header card-header-success\">\n                        <h4 class=\"card-title \">Linguagens</h4>\n                    </div>\n                    <div class=\"card-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead class=\"\">\n                                    <th class=\"text-center\">\n                                        Nome\n                                    </th>\n                                    <th class=\"text-center\">\n                                        Nível (1 a 5)\n                                    </th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let data of knowledgeProgramLanguageList\">\n                                        <td class=\"text-center\">\n                                            {{data.name}}\n                                        </td>\n                                        <td class=\"text-center\">\n                                            {{data.level}}\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- ###Lista de linguagens de programação -->\n\n            <!-- Lista de Ferramentas -->\n            <div class=\"col-md-6\">\n                <div class=\"card\">\n                    <div class=\"card-header card-header-warning\">\n                        <h4 class=\"card-title \">Frameworks</h4>\n                    </div>\n                    <div class=\"card-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead class=\"\">\n                                    <th class=\"text-center\">\n                                        Nome\n                                    </th>\n                                    <th class=\"text-center\">\n                                        Nível (1 a 5)\n                                    </th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let data of knowledgeProgramToolList\">\n                                        <td class=\"text-center\">\n                                            {{data.name}}\n                                        </td>\n                                        <td class=\"text-center\">\n                                            {{data.level}}\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- ###Lista de linguagens de programação -->\n\n            <!-- Lista de Idiomas -->\n            <div class=\"col-md-6\">\n                <div class=\"card\">\n                    <div class=\"card-header card-header-info\">\n                        <h4 class=\"card-title \">Idiomas</h4>\n                    </div>\n                    <div class=\"card-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead class=\"\">\n                                    <th class=\"text-center\">\n                                        Nome\n                                    </th>\n                                    <th class=\"text-center\">\n                                        Nível (1 a 5)\n                                    </th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let data of knowledgeLanguages\">\n                                        <td class=\"text-center\">\n                                            {{data.name}}\n                                        </td>\n                                        <td class=\"text-center\">\n                                            {{data.level}}\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- ###Lista de Idiomas -->\n\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"main-content  animated fadeIn\">\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <!-- Lista de linguagens de programação -->\n            <div class=\"col-md-6\">\n                <div class=\"card\">\n                    <div class=\"card-header card-header-success\">\n                        <h4 class=\"card-title \">Linguagens</h4>\n                    </div>\n                    <div class=\"card-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead class=\"\">\n                                    <th class=\"text-center\">\n                                        Nome\n                                    </th>\n                                    <th class=\"text-center\">\n                                        Nível (1 a 5)\n                                    </th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let data of knowledgeProgramLanguageList\">\n                                        <td class=\"text-center\">\n                                            {{data.name}}\n                                        </td>\n                                        <td class=\"text-center\">\n                                            {{data.level}}\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- ###Lista de linguagens de programação -->\n\n            <!-- Lista de Ferramentas -->\n            <div class=\"col-md-6\">\n                <div class=\"card\">\n                    <div class=\"card-header card-header-warning\">\n                        <h4 class=\"card-title \">Frameworks</h4>\n                    </div>\n                    <div class=\"card-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead class=\"\">\n                                    <th class=\"text-center\">\n                                        Nome\n                                    </th>\n                                    <th class=\"text-center\">\n                                        Nível (1 a 5)\n                                    </th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let data of knowledgeProgramToolList\">\n                                        <td class=\"text-center\">\n                                            {{data.name}}\n                                        </td>\n                                        <td class=\"text-center\">\n                                            {{data.level}}\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- ###Lista de linguagens de programação -->\n\n            <!-- Lista de Idiomas -->\n            <div class=\"col-md-6\">\n                <div class=\"card\">\n                    <div class=\"card-header card-header-info\">\n                        <h4 class=\"card-title \">Idiomas</h4>\n                    </div>\n                    <div class=\"card-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead class=\"\">\n                                    <th class=\"text-center\">\n                                        Nome\n                                    </th>\n                                    <th class=\"text-center\">\n                                        Nível (1 a 5)\n                                    </th>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let data of knowledgeLanguages\">\n                                        <td class=\"text-center\">\n                                            {{data.name}}\n                                        </td>\n                                        <td class=\"text-center\">\n                                            {{data.level}}\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- ###Lista de Idiomas -->\n\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -64690,7 +64701,79 @@ module.exports = "<div class=\"main-content\">\n    <div class=\"container-fluid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"card card-profile\">\n          <div class=\"card-avatar\">\n            <a href=\"javascript:void(0)\">\n              <img class=\"img\" src=\"./assets/img/faces/augusto.jpeg\" />\n            </a>\n          </div>\n          <div class=\"card-body\">\n            <h6 class=\"card-category text-gray\">\n              Desenvolvedor na Leucotron / Escritor na LazyDev\n            </h6>\n            <h4 class=\"card-title\">Augusto Mesquita</h4>\n            <p class=\"card-description\">\n              Sou um simples amante da programação e fã de videogame que\n              possui o costume de transformar café em código! Trabalho com\n              desenvolvimento de front-end e back-end e nas horas vagas arranho como escritor da LazyDev pela plataforma\n              Medium. Você pode me acompanhar ou entrar em contato através das redes sociais.\n            </p>\n            <a href=\"https://www.linkedin.com/in/augusto-mesquita-945952b0/\" target=\"_blank\"\n              class=\"btn btn-danger btn-fill btn-round\" title=\"Linkedin\"><span class=\"fa fa-linkedin\"></span></a>\n            <a href=\"https://medium.com/lazydevofficial\" target=\"_blank\" class=\"btn btn-danger btn-fill btn-round\"\n              title=\"Medium\"><span class=\"fa fa-medium\"></span></a>\n            <a href=\"https://www.instagram.com/augustomesquitasrs/\" target=\"_blank\"\n              class=\"btn btn-danger btn-fill btn-round\" title=\"Instagram\"><span class=\"fa fa-instagram\"></span></a>\n            <a href=\"https://www.facebook.com/augustomesquitaofficial\" target=\"_blank\"\n              class=\"btn btn-danger btn-fill btn-round\" title=\"Facebook\"><span class=\"fa fa-facebook\"></span></a>\n            <a href=\"https://github.com/Augustomesquita\" target=\"_blank\" class=\"btn btn-danger btn-fill btn-round\"\n              title=\"Github\"><span class=\"fa fa-github\"></span></a>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>"
+module.exports = "<div class=\"main-content animated fadeIn\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"card card-profile\">\n          <div class=\"card-avatar\">\n            <a href=\"javascript:void(0)\">\n              <img class=\"img\" src=\"./assets/img/faces/augusto.jpeg\" />\n            </a>\n          </div>\n          <div class=\"card-body\">\n            <h6 class=\"card-category text-gray\">\n              Desenvolvedor na Leucotron / Escritor na LazyDev\n            </h6>\n            <h4 class=\"card-title\">Augusto Mesquita</h4>\n            <p class=\"card-description\">\n              Sou um simples amante da programação e fã de videogame que\n              possui o costume de transformar café em código! Trabalho com\n              desenvolvimento de front-end e back-end e nas horas vagas arranho como escritor da LazyDev pela plataforma\n              Medium. Você pode me acompanhar ou entrar em contato através das redes sociais.\n            </p>\n            <a href=\"https://www.linkedin.com/in/augusto-mesquita-945952b0/\" target=\"_blank\"\n              class=\"btn btn-danger btn-fill btn-round\" title=\"Linkedin\"><span class=\"fa fa-linkedin\"></span></a>\n            <a href=\"https://medium.com/lazydevofficial\" target=\"_blank\" class=\"btn btn-danger btn-fill btn-round\"\n              title=\"Medium\"><span class=\"fa fa-medium\"></span></a>\n            <a href=\"https://www.instagram.com/augustomesquitasrs/\" target=\"_blank\"\n              class=\"btn btn-danger btn-fill btn-round\" title=\"Instagram\"><span class=\"fa fa-instagram\"></span></a>\n            <a href=\"https://www.facebook.com/augustomesquitaofficial\" target=\"_blank\"\n              class=\"btn btn-danger btn-fill btn-round\" title=\"Facebook\"><span class=\"fa fa-facebook\"></span></a>\n            <a href=\"https://github.com/Augustomesquita\" target=\"_blank\" class=\"btn btn-danger btn-fill btn-round\"\n              title=\"Github\"><span class=\"fa fa-github\"></span></a>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/blog/blog.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/blog/blog.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".m-card-body-size {\n    min-height: 95px;\n    max-height: 95px;\n}\n\n.box:hover {\n    transition-property: box-shadow margin-top;\n    transition-duration: 0.70s;\n    margin-top: 17px;\n    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmxvZy9ibG9nLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksMENBQTBDO0lBQzFDLDBCQUEwQjtJQUMxQixnQkFBZ0I7SUFDaEIseUNBQXlDO0FBQzdDIiwiZmlsZSI6InNyYy9hcHAvYmxvZy9ibG9nLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubS1jYXJkLWJvZHktc2l6ZSB7XG4gICAgbWluLWhlaWdodDogOTVweDtcbiAgICBtYXgtaGVpZ2h0OiA5NXB4O1xufVxuXG4uYm94OmhvdmVyIHtcbiAgICB0cmFuc2l0aW9uLXByb3BlcnR5OiBib3gtc2hhZG93IG1hcmdpbi10b3A7XG4gICAgdHJhbnNpdGlvbi1kdXJhdGlvbjogMC43MHM7XG4gICAgbWFyZ2luLXRvcDogMTdweDtcbiAgICBib3gtc2hhZG93OiAwIDhweCA4cHggcmdiYSgwLCAwLCAwLCAwLjEwKTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/blog/blog.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/blog/blog.component.ts ***!
+  \****************************************/
+/*! exports provided: BlogPost, BlogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogPost", function() { return BlogPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogComponent", function() { return BlogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var BlogPost = /** @class */ (function () {
+    function BlogPost() {
+    }
+    return BlogPost;
+}());
+
+var BlogComponent = /** @class */ (function () {
+    function BlogComponent(http) {
+        this.http = http;
+        this.blogPosts = null;
+        this.baseUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/lazydevofficial";
+    }
+    BlogComponent.prototype.ngOnInit = function () {
+        this.list();
+    };
+    BlogComponent.prototype.list = function () {
+        var _this = this;
+        var url = this.baseUrl + "/";
+        this.http.get(url).subscribe(function (res) {
+            _this.blogPosts = res.items;
+        });
+    };
+    BlogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-blog",
+            template: __webpack_require__(/*! raw-loader!./blog.component.html */ "./node_modules/raw-loader/index.js!./src/app/blog/blog.component.html"),
+            styles: [__webpack_require__(/*! ./blog.component.css */ "./src/app/blog/blog.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], BlogComponent);
+    return BlogComponent;
+}());
+
+
 
 /***/ }),
 
@@ -64701,7 +64784,7 @@ module.exports = "<div class=\"main-content\">\n  <div class=\"container-fluid\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".m-card-body-size {\n    min-height: 210px;\n    max-height: 210px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0lBQ2pCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tLWNhcmQtYm9keS1zaXplIHtcbiAgICBtaW4taGVpZ2h0OiAyMTBweDtcbiAgICBtYXgtaGVpZ2h0OiAyMTBweDtcbn0iXX0= */"
+module.exports = ".m-card-body-size {\n    min-height: 210px;\n    max-height: 210px;\n}\n\n.box:hover {\n    transition-property: box-shadow margin-top;\n    transition-duration: 0.70s;\n    margin-top: 17px;\n    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);\n}\n\n.m-margin-top {\n    margin-top: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0lBQ2pCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLDBDQUEwQztJQUMxQywwQkFBMEI7SUFDMUIsZ0JBQWdCO0lBQ2hCLHlDQUF5QztBQUM3Qzs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tLWNhcmQtYm9keS1zaXplIHtcbiAgICBtaW4taGVpZ2h0OiAyMTBweDtcbiAgICBtYXgtaGVpZ2h0OiAyMTBweDtcbn1cblxuLmJveDpob3ZlciB7XG4gICAgdHJhbnNpdGlvbi1wcm9wZXJ0eTogYm94LXNoYWRvdyBtYXJnaW4tdG9wO1xuICAgIHRyYW5zaXRpb24tZHVyYXRpb246IDAuNzBzO1xuICAgIG1hcmdpbi10b3A6IDE3cHg7XG4gICAgYm94LXNoYWRvdzogMCA4cHggOHB4IHJnYmEoMCwgMCwgMCwgMC4xMCk7XG59XG5cbi5tLW1hcmdpbi10b3Age1xuICAgIG1hcmdpbi10b3A6IDE1cHg7XG59Il19 */"
 
 /***/ }),
 
@@ -64709,11 +64792,12 @@ module.exports = ".m-card-body-size {\n    min-height: 210px;\n    max-height: 2
 /*!**************************************************!*\
   !*** ./src/app/dashboard/dashboard.component.ts ***!
   \**************************************************/
-/*! exports provided: DashboardComponent */
+/*! exports provided: Experience, DashboardComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Experience", function() { return Experience; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -64723,10 +64807,81 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
+var Experience = /** @class */ (function () {
+    function Experience() {
+    }
+    return Experience;
+}());
+
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent() {
     }
-    DashboardComponent.prototype.ngOnInit = function () { };
+    DashboardComponent.prototype.ngOnInit = function () {
+        this.experiances = [
+            {
+                title: "To.Do Hotel",
+                subtitle: "Sistema de governança hoteleira.",
+                content: "Atuação como lider técnico e desenvolvedor do produto. Criação / manutenção da aplicação móvel (android), back-end, banco de dados e front-end (Software Proprietário).",
+                imgUrl: "./assets/img/projects/todohotel.png",
+                link: "https://www.leucotron.com.br/todo-hotel",
+                personal: false,
+                maxWidth: "180px"
+            },
+            {
+                title: "Flux IP",
+                subtitle: "Central Telefônica PABX.",
+                content: "Atuação como desenvolvedor do produto. Criação / manutenção de aplicação back-end e de rotinas em shell script (Software Proprietário).",
+                imgUrl: "./assets/img/projects/flux.png",
+                link: "https://www.leucotron.com.br/pabx-flux-ip",
+                personal: false,
+                maxWidth: "200px"
+            },
+            {
+                title: "Ultra Rec",
+                subtitle: "Central Telefônica PABX.",
+                content: "Atuação como desenvolvedor do produto. Criação / manutenção do back-end, banco de dados e front-end (Software Proprietário).",
+                imgUrl: "./assets/img/projects/ultrarec.png",
+                link: "https://www.leucotron.com.br/",
+                personal: false,
+                maxWidth: "145px"
+            },
+            {
+                title: "GamerStory",
+                subtitle: "Aplicativo Android (usando Kotlin) para armazenamento dos jogos que você já finalizou com sistema de pontuação.",
+                content: "Atuação como idealizador, desenvolvedor e designer (Projeto Pessoal).",
+                imgUrl: "./assets/img/projects/control.png",
+                link: "https://play.google.com/store/apps/details?id=com.mesquita.augusto.mygamerscore",
+                personal: true,
+                maxWidth: "53px"
+            },
+            {
+                title: "Aventuras do Futebol",
+                subtitle: "RPG para Desktop (compatível com Windows) feito em C, inspirado na franquia Zelda do SNES.",
+                content: "Atuação como idealizador, desenvolvedor e designer do projeto (Projeto Pessoal / Open Source).",
+                imgUrl: "./assets/img/projects/soccer.png",
+                link: "https://github.com/Augustomesquita/aventuras-do-futebol",
+                personal: true,
+                maxWidth: "53px"
+            },
+            {
+                title: "Skinto",
+                subtitle: "Aplicação Web (Mobile First) para realização de pontuação de campeonato local do jogo League of Legends.",
+                content: "Atuação como idealizador, desenvolvedor e designer do projeto Projeto Pessoal / Open Source).",
+                imgUrl: "./assets/img/projects/skinto.png",
+                link: "https://github.com/Augustomesquita/skinto",
+                personal: true,
+                maxWidth: "53px"
+            }
+        ];
+    };
+    DashboardComponent.prototype.customMaxWidth = function (experiance) {
+        return {
+            "max-width": experiance.maxWidth
+        };
+    };
+    DashboardComponent.prototype.customHeaderClass = function (experiance) {
+        return [experiance.personal ? "card-header-success" : "card-header-info"];
+    };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-dashboard",
@@ -64751,15 +64906,17 @@ var DashboardComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminLayoutModule", function() { return AdminLayoutModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _admin_layout_routing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./admin-layout.routing */ "./src/app/layouts/admin-layout/admin-layout.routing.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../user-profile/user-profile.component */ "./src/app/user-profile/user-profile.component.ts");
-/* harmony import */ var _table_list_table_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../table-list/table-list.component */ "./src/app/table-list/table-list.component.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _blog_blog_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../blog/blog.component */ "./src/app/blog/blog.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _admin_layout_routing__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./admin-layout.routing */ "./src/app/layouts/admin-layout/admin-layout.routing.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../user-profile/user-profile.component */ "./src/app/user-profile/user-profile.component.ts");
+/* harmony import */ var _table_list_table_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../table-list/table-list.component */ "./src/app/table-list/table-list.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64775,27 +64932,31 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AdminLayoutModule = /** @class */ (function () {
     function AdminLayoutModule() {
     }
     AdminLayoutModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_admin_layout_routing__WEBPACK_IMPORTED_MODULE_4__["AdminLayoutRoutes"]),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatRippleModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTooltipModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(_admin_layout_routing__WEBPACK_IMPORTED_MODULE_6__["AdminLayoutRoutes"]),
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatRippleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatTooltipModule"]
             ],
             declarations: [
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"],
-                _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_6__["UserProfileComponent"],
-                _table_list_table_list_component__WEBPACK_IMPORTED_MODULE_7__["TableListComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_7__["DashboardComponent"],
+                _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_8__["UserProfileComponent"],
+                _table_list_table_list_component__WEBPACK_IMPORTED_MODULE_9__["TableListComponent"],
+                _blog_blog_component__WEBPACK_IMPORTED_MODULE_0__["BlogComponent"]
             ]
         })
     ], AdminLayoutModule);
@@ -64819,6 +64980,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../user-profile/user-profile.component */ "./src/app/user-profile/user-profile.component.ts");
 /* harmony import */ var _table_list_table_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../table-list/table-list.component */ "./src/app/table-list/table-list.component.ts");
+/* harmony import */ var _blog_blog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../blog/blog.component */ "./src/app/blog/blog.component.ts");
+
 
 
 
@@ -64826,6 +64989,7 @@ var AdminLayoutRoutes = [
     { path: "projects", component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_0__["DashboardComponent"] },
     { path: "contact", component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_1__["UserProfileComponent"] },
     { path: "knowledge-list", component: _table_list_table_list_component__WEBPACK_IMPORTED_MODULE_2__["TableListComponent"] },
+    { path: "blog", component: _blog_blog_component__WEBPACK_IMPORTED_MODULE_3__["BlogComponent"] },
 ];
 
 

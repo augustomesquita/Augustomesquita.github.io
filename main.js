@@ -561,7 +561,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ROUTES = [
     { path: '/contact', title: "It's-a Me, Augusto!", icon: 'insert_emoticon', class: '' },
     { path: '/projects', title: 'Experiências', icon: 'business_center', class: '' },
-    { path: '/knowledge-list', title: 'Skills', icon: 'content_paste', class: '' },
+    { path: '/blog', title: 'Artigos', icon: 'import_contacts', class: '' },
+    { path: '/knowledge-list', title: 'Skills', icon: 'school', class: '' },
 ];
 var SidebarComponent = /** @class */ (function () {
     function SidebarComponent() {
