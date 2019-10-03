@@ -33,6 +33,17 @@ module.exports = [[module.i, "/*!\n\n===========================================
 
 /***/ }),
 
+/***/ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./src/styles.css":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src??embedded!./src/styles.css ***!
+  \*****************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody ::-webkit-scrollbar,\nbody::-webkit-scrollbar {\n    width: 10px;\n}\n\nbody ::-webkit-scrollbar-track,\nbody::-webkit-scrollbar-track {\n    background: rgba(168, 168, 168, 0.6);\n    border-radius: 8px;\n}\n\nbody ::-webkit-scrollbar-thumb,\nbody::-webkit-scrollbar-thumb {\n    background:rgb(236, 52, 40);\n    border-radius: 8px;\n}\n\nbody ::-webkit-scrollbar-thumb:hover,\nbody::-webkit-scrollbar-thumb:hover {\n    background: rgb(199, 25, 12);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RTs7QUFFOUU7O0lBRUksV0FBVztBQUNmOztBQUVBOztJQUVJLG9DQUFvQztJQUNwQyxrQkFBa0I7QUFDdEI7O0FBRUE7O0lBRUksMkJBQTJCO0lBQzNCLGtCQUFrQjtBQUN0Qjs7QUFFQTs7SUFFSSw0QkFBNEI7QUFDaEMiLCJmaWxlIjoic3JjL3N0eWxlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBZb3UgY2FuIGFkZCBnbG9iYWwgc3R5bGVzIHRvIHRoaXMgZmlsZSwgYW5kIGFsc28gaW1wb3J0IG90aGVyIHN0eWxlIGZpbGVzICovXG5cbmJvZHkgOjotd2Via2l0LXNjcm9sbGJhcixcbmJvZHk6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgICB3aWR0aDogMTBweDtcbn1cblxuYm9keSA6Oi13ZWJraXQtc2Nyb2xsYmFyLXRyYWNrLFxuYm9keTo6LXdlYmtpdC1zY3JvbGxiYXItdHJhY2sge1xuICAgIGJhY2tncm91bmQ6IHJnYmEoMTY4LCAxNjgsIDE2OCwgMC42KTtcbiAgICBib3JkZXItcmFkaXVzOiA4cHg7XG59XG5cbmJvZHkgOjotd2Via2l0LXNjcm9sbGJhci10aHVtYixcbmJvZHk6Oi13ZWJraXQtc2Nyb2xsYmFyLXRodW1iIHtcbiAgICBiYWNrZ3JvdW5kOnJnYigyMzYsIDUyLCA0MCk7XG4gICAgYm9yZGVyLXJhZGl1czogOHB4O1xufVxuXG5ib2R5IDo6LXdlYmtpdC1zY3JvbGxiYXItdGh1bWI6aG92ZXIsXG5ib2R5Ojotd2Via2l0LXNjcm9sbGJhci10aHVtYjpob3ZlciB7XG4gICAgYmFja2dyb3VuZDogcmdiKDE5OSwgMjUsIDEyKTtcbn0iXX0= */", '', '']]
+
+/***/ }),
+
 /***/ "./node_modules/perfect-scrollbar/css/perfect-scrollbar.css":
 /*!******************************************************************!*\
   !*** ./node_modules/perfect-scrollbar/css/perfect-scrollbar.css ***!
@@ -632,16 +643,47 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/styles.css":
+/*!************************!*\
+  !*** ./src/styles.css ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!../node_modules/postcss-loader/src??embedded!./styles.css */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./src/styles.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ 3:
-/*!********************************************************************************************************************************************!*\
-  !*** multi ./node_modules/perfect-scrollbar/css/perfect-scrollbar.css ./src/assets/scss/material-dashboard.scss ./src/assets/css/demo.css ***!
-  \********************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************!*\
+  !*** multi ./node_modules/perfect-scrollbar/css/perfect-scrollbar.css ./src/assets/scss/material-dashboard.scss ./src/assets/css/demo.css ./src/styles.css ***!
+  \*************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/jgilson/Documents/workspace/tests/portfolio/node_modules/perfect-scrollbar/css/perfect-scrollbar.css */"./node_modules/perfect-scrollbar/css/perfect-scrollbar.css");
 __webpack_require__(/*! /home/jgilson/Documents/workspace/tests/portfolio/src/assets/scss/material-dashboard.scss */"./src/assets/scss/material-dashboard.scss");
-module.exports = __webpack_require__(/*! /home/jgilson/Documents/workspace/tests/portfolio/src/assets/css/demo.css */"./src/assets/css/demo.css");
+__webpack_require__(/*! /home/jgilson/Documents/workspace/tests/portfolio/src/assets/css/demo.css */"./src/assets/css/demo.css");
+module.exports = __webpack_require__(/*! /home/jgilson/Documents/workspace/tests/portfolio/src/styles.css */"./src/styles.css");
 
 
 /***/ })
