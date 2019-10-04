@@ -65159,7 +65159,7 @@ var NgxSpinnerModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content animated fadeIn\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n\n      <ngx-spinner name=\"sp1\" type=\"ball-circus\" color=\"#ec3428\" bdColor=\"#fff\" [fullScreen]=\"true\">\n        <b style=\"color: #ec3428; font-weight: 900\" > Estou pensando... </b>\n      </ngx-spinner>\n      <ng-container *ngFor=\"let post of blogPosts\">\n        <div class=\"col-lg-4 col-md-6 col-sm-6\" *ngIf=\"post.title != 'Contato'\">\n          <a href=\"{{post.link}}\" target=\"_blank\">\n\n            <div class=\"card card-stats box\">\n              <div class=\"card-header card-header-text text-center\" style=\"margin-top:5%\">\n                <img class=\"img img-responsive\" src=\"{{post.thumbnail}}\" style=\"max-width: 75%\" />\n              </div>\n              <div class=\"card-body m-card-body-size text-center\">\n                <h4 class=\"card-title\"><b>{{post.title}}</b></h4>\n              </div>\n            </div>\n          </a>\n        </div>\n      </ng-container>\n\n    </div>\n  </div>"
+module.exports = "<div class=\"main-content animated fadeIn\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n\n      <ngx-spinner name=\"sp1\" type=\"ball-climbing-dot\" color=\"#ec3428\" bdColor=\"#fff\" [fullScreen]=\"true\">\n        <b style=\"color: #ec3428; font-weight: 900\" > Estou pensando... </b>\n      </ngx-spinner>\n      <ng-container *ngFor=\"let post of blogPosts\">\n        <div class=\"col-lg-4 col-md-6 col-sm-6\" *ngIf=\"post.title != 'Contato'\">\n          <a href=\"{{post.link}}\" target=\"_blank\">\n\n            <div class=\"card card-stats box\">\n              <div class=\"card-header card-header-text text-center\" style=\"margin-top:5%\">\n                <img class=\"img img-responsive\" src=\"{{post.thumbnail}}\" style=\"max-width: 75%\" />\n              </div>\n              <div class=\"card-body m-card-body-size text-center\">\n                <h4 class=\"card-title\"><b>{{post.title}}</b></h4>\n              </div>\n            </div>\n          </a>\n        </div>\n      </ng-container>\n\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -65170,7 +65170,7 @@ module.exports = "<div class=\"main-content animated fadeIn\">\n  <div class=\"c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content animated fadeIn\">\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <div class=\"col-lg-4 col-md-6 col-sm-6\" *ngFor=\"let experiance of experiances\">\n                <a href=\"{{experiance.link}}\" target=\"_blank\">\n                    <div class=\"card card-stats box\">\n                        <div class=\"card-header text-center\" [ngClass]=\"customHeaderClass(experiance)\" >\n                            <img class=\"img\" src=\"{{experiance.imgUrl}}\" [ngStyle]=\"customMaxWidth(experiance)\" />\n                        </div>\n                        <div class=\"card-body m-card-body-size text-center\">\n                            <h4 class=\"card-title\"><b>{{experiance.title}}</b></h4>\n                            <div class=\"card-category\">\n                                <div><b>{{experiance.subtitle}}</b></div>\n                                <div class=\"m-margin-top\">{{experiance.content}}</div>\n                            </div>\n                        </div>\n                    </div>\n                </a>\n            </div>\n\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"main-content animated fadeIn\">\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n\n            <div class=\"col-lg-4 col-md-6 col-sm-6\" *ngFor=\"let experiance of experiances\">\n                <ngx-spinner [name]=\"experiance.title\" type=\"ball-clip-rotate-pulse\" color=\"#ec3428\" bdColor=\"#fff\"\n                    [fullScreen]=\"false\">\n                </ngx-spinner>\n                <a href=\"{{experiance.link}}\" target=\"_blank\" >\n                    <div class=\"card card-stats box\">\n                        <div class=\"card-header text-center\" [ngClass]=\"customHeaderClass(experiance)\">\n                            <img class=\"img\" src=\"{{experiance.imgUrl}}\" [ngStyle]=\"customMaxWidth(experiance)\" (load)=\"hideSpinner(experiance.title)\"\n                                 />\n                        </div>\n                        <div class=\"card-body m-card-body-size text-center\">\n                            <h4 class=\"card-title\"><b>{{experiance.title}}</b></h4>\n                            <div class=\"card-category\">\n                                <div><b>{{experiance.subtitle}}</b></div>\n                                <div class=\"m-margin-top\">{{experiance.content}}</div>\n                            </div>\n                        </div>\n                    </div>\n                </a>\n            </div>\n\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -65293,12 +65293,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Experience", function() { return Experience; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var Experience = /** @class */ (function () {
     function Experience() {
@@ -65307,9 +65312,8 @@ var Experience = /** @class */ (function () {
 }());
 
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent() {
-    }
-    DashboardComponent.prototype.ngOnInit = function () {
+    function DashboardComponent(spinner) {
+        this.spinner = spinner;
         this.experiances = [
             {
                 title: "To.Do Hotel",
@@ -65366,6 +65370,15 @@ var DashboardComponent = /** @class */ (function () {
                 maxWidth: "53px"
             }
         ];
+    }
+    DashboardComponent.prototype.ngOnInit = function () { };
+    DashboardComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.experiances.forEach(function (experience) {
+            setTimeout(function () {
+                _this.showSpinner(experience.title);
+            });
+        });
     };
     DashboardComponent.prototype.customMaxWidth = function (experiance) {
         return {
@@ -65375,12 +65388,19 @@ var DashboardComponent = /** @class */ (function () {
     DashboardComponent.prototype.customHeaderClass = function (experiance) {
         return [experiance.personal ? "card-header-success" : "card-header-info"];
     };
+    DashboardComponent.prototype.hideSpinner = function (spinnerName) {
+        this.spinner.hide(spinnerName);
+    };
+    DashboardComponent.prototype.showSpinner = function (spinnerName) {
+        this.spinner.show(spinnerName);
+    };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-dashboard",
             template: __webpack_require__(/*! raw-loader!./dashboard.component.html */ "./node_modules/raw-loader/index.js!./src/app/dashboard/dashboard.component.html"),
             styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
